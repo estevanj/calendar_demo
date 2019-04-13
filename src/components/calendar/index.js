@@ -1,16 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Month from '../month'
 
 const Calendar = () => {
-	const remindersList = [
+	const [ remindersList, setRemidersList ] = useState([
 		{
-			id: 0,
 			title: 'All Day Event very long title',
-			allDay: true,
-			start: new Date(2019, 4, 0),
-			end: new Date(2019, 4, 1)
+			date: new Date('2019-04-11'),
+			start: '10:00',
+			end: '11:00'
 		}
-	]
+	])
 
 	return (
 		<div className="container">

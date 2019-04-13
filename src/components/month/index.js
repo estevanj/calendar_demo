@@ -22,7 +22,7 @@ const Month = ({ reminders }) => {
 	const daysForWeek = getDaysForWeek()
 
 	const calendarMonth = daysForWeek.map((item, index) => {
-		return <Week key={index} data={item} />
+		return <Week key={index} data={item} reminders={reminders} />
 	})
 
 	return (
