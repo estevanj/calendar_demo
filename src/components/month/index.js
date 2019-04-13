@@ -22,7 +22,6 @@ const Month = ({ reminders, activeForm }) => {
 	const daysForWeek = getDaysForWeek()
 
 	const calendarMonth = daysForWeek.map((item, index) => {
-		console.log(daysForWeek)
 		return <Week activeForm={activeForm} key={index} data={item} reminders={reminders} />
 	})
 

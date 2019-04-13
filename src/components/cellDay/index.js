@@ -4,18 +4,17 @@ import { Container, RemiderStyle } from './style'
 
 const CellDay = ({ day, reminder }) => {
 	let remiderData = ''
-	if (reminder[0].title) {
-		remiderData = reminder.map((item, index) => {
+
+	remiderData = reminder.map((item, index) => {
+		if (item.title) {
 			return (
-				<RemiderStyle className="col-md-12">
-					<div className="col-md-4">
-						{item.start} {item.end}
-					</div>
+				<RemiderStyle key={`content_${index}`} style={{ color: `${item.color}` }} className="col-md-12">
+					<div className="col-md-4">{item.hour}</div>
 					<div className="col-md-8">{item.title}</div>
 				</RemiderStyle>
 			)
-		})
-	}
+		}
+	})
 
 	return (
 		<Container>

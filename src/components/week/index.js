@@ -7,6 +7,7 @@ import CellDay from '../../components/cellDay'
 const Week = ({ data, reminders, activeForm }) => {
 	const dataweek = data.days.map((item, index) => {
 		const day = moment(item._d).format('DD')
+		const dayData = item._d
 		const dateWeek = moment(item._d).format('YYYY-MM-DD')
 		const remider = reminders.map((iremR, indexR) => {
 			const dateRemiders = moment(iremR.date).format('YYYY-MM-DD')
@@ -19,7 +20,7 @@ const Week = ({ data, reminders, activeForm }) => {
 
 		return (
 			<td key={day}>
-				<Button onClick={activeForm}>
+				<Button onClick={() => activeForm(dayData)}>
 					<CellDay day={day} reminder={remider} />
 				</Button>
 			</td>
