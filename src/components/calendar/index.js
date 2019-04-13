@@ -1,5 +1,5 @@
 import React from 'react'
-import Month from './month'
+import Month from '../month'
 
 const Calendar = () => {
 	const remindersList = [

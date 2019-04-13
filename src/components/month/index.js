@@ -1,7 +1,7 @@
 import React from 'react'
 import moment from 'moment'
-
-import Week from '../../week'
+import { Container } from './style'
+import Week from '../week'
 
 const Month = ({ reminders }) => {
 	const getDaysForWeek = () => {
@@ -30,12 +30,27 @@ const Month = ({ reminders }) => {
 			<table>
 				<thead>
 					<tr>
-						<th>Sunday</th>
-						<th rowSpan="2">Monday</th>
-						<th rowSpan="2">Tuesday</th>
-						<th rowSpan="2">wednesday</th>
-						<th rowSpan="2">Friday</th>
-						<th rowSpan="2">Saturday</th>
+						<th>
+							<Container>Sunday</Container>
+						</th>
+						<th>
+							<Container>Monday</Container>
+						</th>
+						<th>
+							<Container>Tuesday</Container>
+						</th>
+						<th>
+							<Container>Wednesday</Container>
+						</th>
+						<th>
+							<Container>Thusday</Container>
+						</th>
+						<th>
+							<Container>Friday</Container>
+						</th>
+						<th>
+							<Container>Saturday</Container>
+						</th>
 					</tr>
 				</thead>
 				{calendarMonth}
