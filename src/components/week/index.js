@@ -1,8 +1,10 @@
 import React from 'react'
 import moment from 'moment'
 
+import { Button } from './style'
+
 import CellDay from '../../components/cellDay'
-const Week = ({ data, reminders }) => {
+const Week = ({ data, reminders, activeForm }) => {
 	const dataweek = data.days.map((item, index) => {
 		const day = moment(item._d).format('DD')
 		const dateWeek = moment(item._d).format('YYYY-MM-DD')
@@ -17,7 +19,9 @@ const Week = ({ data, reminders }) => {
 
 		return (
 			<td key={day}>
-				<CellDay day={day} reminder={remider} />
+				<Button onClick={activeForm}>
+					<CellDay day={day} reminder={remider} />
+				</Button>
 			</td>
 		)
 	})

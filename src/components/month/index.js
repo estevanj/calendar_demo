@@ -3,13 +3,13 @@ import moment from 'moment'
 import { Container } from './style'
 import Week from '../week'
 
-const Month = ({ reminders }) => {
+const Month = ({ reminders, activeForm }) => {
 	const getDaysForWeek = () => {
 		const startWeek = moment().startOf('month').week()
 		const endWeek = moment().endOf('month').week()
 
 		let calendar = []
-		for (var week = startWeek; week < endWeek; week++) {
+		for (let week = startWeek; week <= endWeek; week++) {
 			calendar.push({
 				week: week,
 				days: Array(7).fill(0).map((n, i) => moment().week(week).startOf('week').clone().add(n + i, 'day'))
@@ -22,7 +22,8 @@ const Month = ({ reminders }) => {
 	const daysForWeek = getDaysForWeek()
 
 	const calendarMonth = daysForWeek.map((item, index) => {
-		return <Week key={index} data={item} reminders={reminders} />
+		console.log(daysForWeek)
+		return <Week activeForm={activeForm} key={index} data={item} reminders={reminders} />
 	})
 
 	return (
